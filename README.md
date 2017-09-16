@@ -35,8 +35,9 @@ variety of languages.
 # Goal & Purpose
 
 This repository will host my various attempts at implementing _sleepsort_.
-I may reimplement _sleepsort_ multiple times in the same language. I intend
-to keep each implementation self contained. The interface will follow Kevlin
-Henney's shell example (i.e. Numbers are given as command-line arguments).
-Any necessary build parameters will be provided as comments at the top of
-source files.
+I may reimplement _sleepsort_ multiple times in the same language.
+
+ * Each implementation will be self contained (i.e. One source file per implementation)
+ * Interface will follow Kevlin Henney's shell example (i.e. Numbers are given as command-line arguments)
+ * Any necessary build parameters will be provided as comments towards the begin of source
+ * Implementations will strive to be as simple as allowable by standard language features.
