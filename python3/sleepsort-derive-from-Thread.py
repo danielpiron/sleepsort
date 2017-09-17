@@ -21,6 +21,8 @@ class DelayedEcho(threading.Thread):
 
 
 def sleepsort(numbers):
+    # Guard against non-integer input by converting to int upfront.
+    numbers = [int(n) for n in numbers]
     echoers = []
     for n in numbers:
         echoer = DelayedEcho(n)
@@ -32,4 +34,4 @@ def sleepsort(numbers):
 
 
 if __name__ == '__main__':
-    sleepsort([int(n) for n in sys.argv[1:]])
+    sleepsort(sys.argv[1:])

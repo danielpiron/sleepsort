@@ -8,18 +8,24 @@ import sys
 import threading
 import time
 
-if __name__ == '__main__':
 
-    numbers = sys.argv[1:]
+def sleepsort(numbers):
+    # Guard against non-integer input by converting to int upfront.
+    numbers = [int(n) for n in numbers]
+
     def delayed_echo(n):
         time.sleep(n)
         print(n)
 
     threads = []
     for n in numbers:
-        thread = threading.Thread(target=delayed_echo, args=(int(n),))
+        thread = threading.Thread(target=delayed_echo, args=(n,))
         thread.start()
         threads.append(thread)
 
     for thread in threads:
         thread.join()
+
+
+if __name__ == '__main__':
+    sleepsort(sys.argv[1:])
